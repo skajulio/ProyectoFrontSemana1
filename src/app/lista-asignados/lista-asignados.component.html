@@ -1,0 +1,39 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-header text-center">
+          <h6>
+            Clientes atendiendose al momento
+          </h6>
+        </div>
+        <div class="card-body">
+
+          <form *ngFor="let atiende of asignados" action="" class="inline-form">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text bg-info text-light" for="inputGroupSelect01">{{atiende.dependiente}}</label>
+              </div>
+              <input type="text" class="form-control" placeholder={{atiende.cliente}} aria-label="Recipient's username" aria-describedby="button-addon2"
+                readonly>
+              <div class="input-group-append">
+                <button (click)="remover(atiende.dependiente)" class="btn btn-success" type="button" id="button-addon2">Terminar</button>
+              </div>
+            </div>
+          </form>
+          
+        </div>
+        <div class="card-footer text-muted">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Auto asignar cliente
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>
